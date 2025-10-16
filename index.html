@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Stroller Transit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">NYC STROLLER TRANSIT</h1>
+            <p class="subtitle">Find accessible transit routes for families</p>
+        </header>
+
+        <main class="main">
+            <form class="route-form" id="routeForm">
+                <div class="input-group">
+                    <label for="fromAddress" class="label">From</label>
+                    <input 
+                        type="text" 
+                        id="fromAddress" 
+                        name="fromAddress" 
+                        class="input-field" 
+                        placeholder="Enter starting address"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="toAddress" class="label">To</label>
+                    <input 
+                        type="text" 
+                        id="toAddress" 
+                        name="toAddress" 
+                        class="input-field" 
+                        placeholder="Enter destination address"
+                        required
+                    >
+                </div>
+
+                <div class="options-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="strollerAccessible" name="strollerAccessible" checked>
+                        <span class="checkmark"></span>
+                        Stroller accessible only
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="elevatorAccess" name="elevatorAccess" checked>
+                        <span class="checkmark"></span>
+                        Elevator access required
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">FIND ROUTE</span>
+                </button>
+            </form>
+
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <h2 class="results-title">ROUTE RESULTS</h2>
+                <div class="route-results" id="routeResults"></div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>FINDING THE BEST ROUTE...</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">POWERED BY TRANSITLAND API</p>
+        </footer>
+    </div>
+
+    <!-- Load environment config if it exists (GitHub Pages) -->
+    <script src="config/env-config.js" async onerror="console.log('No environment config found - using local development mode')"></script>
+    <script src="config/api-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

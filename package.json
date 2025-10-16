@@ -1,0 +1,26 @@
+{
+  "name": "stroller-transit-nyc",
+  "version": "1.0.0",
+  "description": "A mobile-first web application for finding stroller-accessible transit routes in NYC",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "transit",
+    "accessibility",
+    "nyc",
+    "stroller",
+    "public-transport"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
