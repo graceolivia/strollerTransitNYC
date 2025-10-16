@@ -6,4 +6,4 @@ Ideally, when finished, this project will provide:
 - [ ] Options for accessible stations at either or both ends
 - [ ] Querying the "elevators out of service" API for up to date information
 - [ ] options to adjust how much walking on either or both ends
-- [ ] Route preferences akin to [MTA Trip Planner](https://www.mta.info/tripplanner)
+- [ ] Route preferences akin to [MTA Trip Planner](https://www.mta.info/tripplanner/results)
