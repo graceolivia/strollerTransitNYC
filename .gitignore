@@ -1,4 +1,5 @@
 # API Keys and Environment Variables
+.dev-env
 .env
 .env.local
 .env.production
