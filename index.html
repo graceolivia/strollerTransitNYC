@@ -75,11 +75,12 @@
         </footer>
     </div>
 
-    <!-- Load environment config if it exists (GitHub Pages) -->
-    <script src="config/env-config.js" async onerror="console.log('No environment config found - using local development mode')"></script>
+    <!-- Load API configuration first -->
     <script src="config/api-config.js"></script>
+    <!-- Load environment config if it exists (GitHub Pages) -->
+    <script src="config/env-config.js" onerror="console.log('No environment config found - using local development mode')"></script>
     <!-- Load local environment variables for development -->
-    <script src="config/load-env.js"></script>
+    <script src="config/load-env.js" onerror="console.log('No .dev-env file found - API key must be set manually')"></script>
     <script src="script.js"></script>
 </body>
 </html>

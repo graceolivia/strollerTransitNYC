@@ -91,29 +91,20 @@ class ApiConfig {
 // Create singleton instance
 const apiConfig = new ApiConfig();
 
-// Export functions for use in other modules
-export function getApiKey() {
-    return apiConfig.getApiKey();
-}
-
-export function setApiKey(key) {
-    return apiConfig.setApiKey(key);
-}
-
-export function isApiConfigured() {
-    return apiConfig.isConfigured();
-}
-
-export function getApiConfig() {
-    return apiConfig;
-}
-
-// For browsers that don't support ES modules, also attach to window
+// Attach to window for browser compatibility
 if (typeof window !== 'undefined') {
     window.StrollerTransitApi = {
-        getApiKey,
-        setApiKey,
-        isApiConfigured,
-        getApiConfig
+        getApiKey: function() {
+            return apiConfig.getApiKey();
+        },
+        setApiKey: function(key) {
+            return apiConfig.setApiKey(key);
+        },
+        isApiConfigured: function() {
+            return apiConfig.isConfigured();
+        },
+        getApiConfig: function() {
+            return apiConfig;
+        }
     };
 }
