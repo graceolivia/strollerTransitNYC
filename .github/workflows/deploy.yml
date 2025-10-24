@@ -42,8 +42,14 @@ jobs:
         # Build the project
         npm run build
         
-        # Inject API key into the built files
-        find dist -name "*.js" -type f -exec sed -i "s/YOUR_API_KEY_HERE/${{ secrets.TRANSITHUB_API_KEY }}/g" {} \;
+        # Copy non-bundled assets to dist
+        cp -r config dist/
+        cp script.js dist/
+        cp styles.css dist/
+        
+        # Inject API key into the copied files
+        sed -i "s/YOUR_API_KEY_HERE/${{ secrets.TRANSITHUB_API_KEY }}/g" dist/config/api-config.js
+        sed -i "s/const GITHUB_PAGES_API_KEY = null;/const GITHUB_PAGES_API_KEY = '${{ secrets.TRANSITHUB_API_KEY }}';/g" dist/config/env-config.js
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
